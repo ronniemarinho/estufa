@@ -6,3 +6,4 @@ plotly
 requests
 streamlit-autorefresh
 firebase-admin
+seaborn
