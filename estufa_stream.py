@@ -109,12 +109,20 @@ st_autorefresh(interval=5000, key="refresh")
 
 if not firebase_admin._apps:
 
-    cred = credentials.Certificate("chave_certo.json")
+    cred = credentials.Certificate(
+    dict(st.secrets["gcp_service_account"]))
 
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://esp32-fe8e3-default-rtdb.firebaseio.com/'
     })
 
+##################################################
+# LER DADOS DO FIREBASE
+##################################################
+
+ref = db.reference("/historico")
+
+dados = ref.get()
 # ============================================================
 # CIDADE
 # ============================================================
