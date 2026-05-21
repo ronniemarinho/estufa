@@ -810,21 +810,35 @@ with col1:
     st.subheader("Código Python")
 
     st.code('''
-if valor < 22:
+analise = []
 
-    estado = "Baixo"
+for i in range(len(melhor_prev)):
 
-elif valor < 28:
+    temperatura_prevista = melhor_prev[i]
 
-    estado = "Ideal"
+    if temperatura_prevista < 22:
 
-elif valor < 35:
+        estado = "Baixo"
 
-    estado = "Atenção"
+        decisao = "Sem necessidade de ação"
 
-else:
+    elif temperatura_prevista < 28:
 
-    estado = "Crítico"
+        estado = "Ideal"
+
+        decisao = "Ambiente estável"
+
+    elif temperatura_prevista < 35:
+
+        estado = "Atenção"
+
+        decisao = "Monitorar sistema"
+
+    else:
+
+        estado = "Crítico"
+
+        decisao = "Acionar resfriamento"
 ''', language='python')
 
 # ------------------------------------------------------------
