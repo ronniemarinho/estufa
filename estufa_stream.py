@@ -53,6 +53,15 @@ st.set_page_config(
 
 st.title("🌡️Sistema Inteligente de Monitoramento e Predição Térmica em Estufas Agrícolas🌱")
 
+col1, col2, col3 = st.columns([1,2,1])
+
+with col2:
+    st.image(
+        "Logo_Unesp.png",
+        width=650
+    )
+
+
 st.markdown("""
 O sistema toma decisões automaticamente com base
 na temperatura prevista pelo modelo matemático.
