@@ -96,6 +96,8 @@ with col1:
 
     st.code('''
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
 base = pd.read_csv("dados_temperatura.csv")
 
@@ -916,13 +918,21 @@ with col1:
     st.subheader("Código Python")
 
     st.code('''
-ax.axhspan(0,22,color='blue')
 
-ax.axhspan(22,28,color='green')
 
-ax.axhspan(28,35,color='yellow')
+fig, ax = plt.subplots()
 
-ax.axhspan(35,50,color='red')
+ax.axhspan(0,22,color='blue', alpha=0.3)
+
+ax.axhspan(22,28,color='green', alpha=0.3)
+
+ax.axhspan(28,35,color='yellow', alpha=0.3)
+
+ax.axhspan(35,50,color='red', alpha=0.3)
+
+ax.set_ylim(0,50)
+
+plt.show()
 ''', language='python')
 
 # ------------------------------------------------------------
